@@ -8,13 +8,14 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVTAR } from "../utils/constants";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null); //to display error message
-  const navigate = useNavigate(); // to naviate to different page
+
   const dispatch = useDispatch(); //fixing the bug to get rendered at once
 
   //taking refernce from the input box
@@ -32,7 +33,6 @@ const Login = () => {
       password.current.value
     );
     setErrorMessage(message);
-    console.log("Message is " + message);
 
     if (message) return; //return bcz don't want to go on next process.
 
@@ -50,7 +50,7 @@ const Login = () => {
           //update user name after signing up
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "usericon.png",
+            photoURL: USER_AVTAR,
           })
             .then(() => {
               //dispatch action and update here
@@ -60,18 +60,13 @@ const Login = () => {
                   uid: uid,
                   email: email,
                   displayName: displayName,
-                  photoURL: photoURL,
+                  photoURL: { USER_AVTAR },
                 })
               );
-              //after profile is updated navigate
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
             });
-
-          console.log(user);
-          // navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -88,8 +83,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
