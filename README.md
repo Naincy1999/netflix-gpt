@@ -22,17 +22,30 @@
 -Created redux store with userslice
 -Implemented Sign out
 -Update Profile(name, photo)
+-BugFix: Sign up user displayName and profile picture update
+-BugFix: If the user is not logged in Redirect/ browse to Login Page and Vice-versa.
+-Unsubscribe to onAuthStateChanged callback
+-Put hardcoded values to the constants file.
+-Register on TMDB API & create an app & get aaccess token
+-Get data from TMDB now playing movies list API from the documentation
+-custom hook from nowPlayingMovies
+-updated store by adding movieSlice and adding movie data to it.
+-planing for MainContainer & secondaryContainer
+-fetch data for trailer video
+-Update store with trailer video data
+-embedded the youtube video and make it autoplay and mute
+-added tailwind css to malke main cobtainer look awesome
 
-#Features
-_Not Logged In_
-sign in/ sign out page
-_Browse Page_(after authentication)
---Header
---Main Movie
----Trailer in bg
----Tile, description, play button
---Movie Suggestion
----Movie Lists \* N
---Netflix GPT
----Search Bar
---Movie Suggestions
+- #Features
+  _Not Logged In_
+  sign in/ sign out page
+  _Browse Page_(after authentication)
+  --Header
+  --Main Movie
+  ---Trailer in bg
+  ---Tile, description, play button
+  --Movie Suggestion
+  ---Movie Lists \* N
+  --Netflix GPT
+  ---Search Bar
+  --Movie Suggestions
