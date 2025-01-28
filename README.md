@@ -35,6 +35,16 @@
 -Update store with trailer video data
 -embedded the youtube video and make it autoplay and mute
 -added tailwind css to malke main cobtainer look awesome
+-Build Secondary Container
+-Build Movie List
+-Build Movie Card
+-TMDB IMG CDN URL
+-Mage the browse page amazing with tailwind CSS.
+-usePopularMovies custom hook
+-GPT Search Page
+-GPT Search Bar
+-Multi-language Feature in our app
+-Integrate GPT APIS(get open api)
 
 - #Features
   _Not Logged In_
