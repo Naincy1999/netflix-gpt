@@ -4,15 +4,19 @@ import { BG_URL } from "../utils/constants";
 
 function GptSearch() {
   return (
-    <div>
+    <>
       <div className="fixed -z-10">
-        <img src={BG_URL} alt="logo" />
+        <img
+          className="md:w-full  h-screen object-cover "
+          src={BG_URL}
+          alt="logo"
+        />
       </div>
-      <div>
+      <div className="pt-[20] md: p-0">
         <GptSearchBar />
         <GptMovieSuggestions />
       </div>
-    </div>
+    </>
   );
 }
 
